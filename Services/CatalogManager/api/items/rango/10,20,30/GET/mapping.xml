@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ZosConnectServiceMapping xmlns:ns2="http://www.ibm.com/zosConnect/2.0/zosConnectServiceMapping" mappingSpecVersion="1.0">
+    <mappingContext basePath="/catalogManager" relativePath="/items/rango/10,20,30" method="GET" serviceName="inquireCatalog" defaultResponseCode="200"/>
+    <requestMessage>
+        <mappingRootModel type="MSL" location="api/items/rango/10,20,30/GET/request.map"/>
+    </requestMessage>
+    <responseMessages code="200" description="OK"/>
+</ns2:ZosConnectServiceMapping>

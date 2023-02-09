@@ -1,0 +1,77 @@
+{
+  "type" : "object",
+  "properties" : {
+    "DFH0XCP1" : {
+      "type" : "object",
+      "properties" : {
+        "CA_RETURN_CODE" : {
+          "minimum" : 0,
+          "maximum" : 99,
+          "type" : "integer"
+        },
+        "CA_RESPONSE_MESSAGE" : {
+          "maxLength" : 79,
+          "type" : "string"
+        },
+        "CA_INQUIRE_REQUEST" : {
+          "type" : "object",
+          "properties" : {
+            "CA_LIST_START_REF" : {
+              "minimum" : 0,
+              "maximum" : 9999,
+              "type" : "integer"
+            },
+            "CA_LAST_ITEM_REF" : {
+              "minimum" : 0,
+              "maximum" : 9999,
+              "type" : "integer"
+            },
+            "CA_ITEM_COUNT" : {
+              "minimum" : 0,
+              "maximum" : 999,
+              "type" : "integer"
+            },
+            "CA_CAT_ITEM" : {
+              "type" : "array",
+              "maxItems" : 15,
+              "minItems" : 15,
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "CA_ITEM_REF" : {
+                    "minimum" : 0,
+                    "maximum" : 9999,
+                    "type" : "integer"
+                  },
+                  "CA_DESCRIPTION" : {
+                    "maxLength" : 40,
+                    "type" : "string"
+                  },
+                  "CA_DEPARTMENT" : {
+                    "minimum" : 0,
+                    "maximum" : 999,
+                    "type" : "integer"
+                  },
+                  "CA_COST" : {
+                    "maxLength" : 6,
+                    "type" : "string"
+                  },
+                  "IN_STOCK" : {
+                    "minimum" : 0,
+                    "maximum" : 9999,
+                    "type" : "integer"
+                  },
+                  "ON_ORDER" : {
+                    "minimum" : 0,
+                    "maximum" : 999,
+                    "type" : "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
