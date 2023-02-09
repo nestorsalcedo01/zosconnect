@@ -1,0 +1,33 @@
+---
+Manifest-Version: 1.0
+name: "selectempleado"
+provider: "restclient-1.0"
+factoryPid: "rest"
+requestSchema:
+  value: "file:///schemas/selectempleadoRequest.json"
+  type: "JSONSchema"
+responseSchema:
+  value: "file:///schemas/selectempleadoResponse.json"
+  type: "JSONSchema"
+providerProperties:
+- propertyName: "db2ServiceName"
+  value: "selectEmployee"
+  type: "STRING"
+- propertyName: "db2ServiceVersion"
+  value: ""
+  type: "STRING"
+- propertyName: "collectionId"
+  value: "zCEEService"
+  type: "STRING"
+- propertyName: "verb"
+  value: "POST"
+  type: "STRING"
+- propertyName: "uri"
+  value: "/services/zCEEService/selectEmployee"
+  type: "STRING"
+- propertyName: "connectionRef"
+  value: "Db2Conn"
+  type: "STRING"
+providerObjects: []
+version: "1.0.0"
+description: ""

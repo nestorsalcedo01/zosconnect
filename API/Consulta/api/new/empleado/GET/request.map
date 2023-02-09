@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappingRoot domainID="com.ibm.msl.mapping.xml" domainIDExtension="zosconnect" jsonWrapped="true" jsonWrapperName="selectempleado" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/GET" version="8.0.5.0" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="http://www.ibm.com/zosConnect/2.0/mapping/GET">
+    <inlinedXMLSchema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET" xmlns:tns="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET">
+  <xsd:element name="selectempleado" type="tns:selectempleado"/>
+  <xsd:complexType name="selectempleado">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="employeeNumber">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></inlinedXMLSchema>
+    <inlinedXMLSchema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/GET"><![CDATA[
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/GET" xmlns:body="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET" xmlns:tns="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/GET" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <xsd:import namespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET" schemaLocation="../schema_0.xsd"></xsd:import>
+
+      <xsd:element name="HTTPRequest" type="tns:HTTPRequestType"></xsd:element>
+
+      <xsd:complexType name="HTTPRequestType">
+        <xsd:sequence>
+          <xsd:element name="Headers" type="tns:HeadersType"></xsd:element>
+          <xsd:element name="PathParameters" type="tns:PathParametersType"></xsd:element>
+          <xsd:element name="QueryParameters" type="tns:QueryParametersType"></xsd:element>
+          <xsd:element name="Body" type="tns:BodyType"></xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="HeadersType">
+        <xsd:sequence>
+        	<xsd:element maxOccurs="1" minOccurs="0" name="Authorization" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="PathParametersType">
+        <xsd:sequence>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="QueryParametersType">
+        <xsd:sequence>
+            <xsd:element name="emp" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="BodyType">
+        <xsd:sequence>
+          <xsd:element ref="body:selectempleado"></xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>]]></inlinedXMLSchema>
+    <input inlinedXMLSchema="true" path="../schema_1.xsd" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/GET" var="rootInput"></input>
+    <output inlinedXMLSchema="true" path="../schema_0.xsd" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET" var="rootOutput"></output>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/GET"></namespace>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET"></namespace>
+    </namespaces>
+    <mappingDeclaration name="GET.new.empleado">
+        <input namespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/GET" path="$rootInput/HTTPRequest"></input>
+        <output namespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/GET" path="$rootOutput/selectempleado"></output>
+        <passthrough>
+            <input path="Body/selectempleado"></input>
+            <output path="."></output>
+            <updates>
+                <move>
+                    <input httpIn="query" path="QueryParameters/emp" shape="1" xsdBuiltInOrDerivedSimpleType="http://www.w3.org/2001/XMLSchema:string"></input>
+                    <output httpIn="body" path="employeeNumber" shape="1" xsdBuiltInOrDerivedSimpleType="http://www.w3.org/2001/XMLSchema:string"></output>
+                </move>
+            </updates>
+        </passthrough>
+    </mappingDeclaration>
+</mappingRoot>

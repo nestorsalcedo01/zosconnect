@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "LOCATION": {
+      "type": "string",
+      "maxLength": 16,
+      "description": "Nullable CHAR(16)"
+    }
+  },
+  "required": [
+    "LOCATION"
+  ],
+  "description": "Service simpleSelect1 invocation HTTP request body"
+}
