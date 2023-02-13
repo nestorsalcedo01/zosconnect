@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zosConnectApi xmlns="http://www.ibm.com/zosConnect/2.0/zosConnectApi" id="cscvincapi">
+    <apiSpec title="cscvincapi" basePath="/cscvinc" description="" version="1.0.0">
+        <path relativePath="/employee/{numb}">
+            <method type="GET" zosConnectServiceRef="cscvincSelectService" httpXformFile="api/employee/{numb}/GET/mapping.xml" operationId="getCscvincSelectService"></method>
+            <method type="DELETE" zosConnectServiceRef="cscvincDeleteRequest" httpXformFile="api/employee/{numb}/DELETE/mapping.xml" operationId="deleteCscvincDeleteRequest"></method>
+        </path>
+        <path relativePath="/employee">
+            <method type="POST" zosConnectServiceRef="cscvincInsertService" httpXformFile="api/employee/POST/mapping.xml" operationId="postCscvincInsertService"/>
+            <method type="PUT" zosConnectServiceRef="cscvincUpdateService" httpXformFile="api/employee/PUT/mapping.xml" operationId="putCscvincUpdateService"/>
+        </path>
+        <apiDoc docType="SWAGGER">api-docs/swagger.json</apiDoc>
+    </apiSpec>
+</zosConnectApi>

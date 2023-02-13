@@ -1,0 +1,25 @@
+{
+  "type" : "object",
+  "properties" : {
+    "DFH0XCP1" : {
+      "type" : "object",
+      "properties" : {
+        "CA_ORDER_REQUEST" : {
+          "type" : "object",
+          "properties" : {
+            "itemID" : {
+              "minimum" : 0,
+              "maximum" : 9999,
+              "type" : "integer"
+            },
+            "orderQuantity" : {
+              "minimum" : 0,
+              "maximum" : 999,
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

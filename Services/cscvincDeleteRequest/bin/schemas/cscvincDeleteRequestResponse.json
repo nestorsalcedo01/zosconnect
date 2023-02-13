@@ -1,0 +1,35 @@
+{
+  "type" : "object",
+  "properties" : {
+    "cscvincDeleteRequestOperationResponse" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincContainer" : {
+          "type" : "object",
+          "properties" : {
+            "response" : {
+              "type" : "object",
+              "properties" : {
+                "CEIBRESP" : {
+                  "minimum" : -99999999,
+                  "maximum" : 99999999,
+                  "type" : "integer"
+                },
+                "CEIBRESP2" : {
+                  "minimum" : 0,
+                  "maximum" : 99999999,
+                  "type" : "integer"
+                },
+                "USERID" : {
+                  "maxLength" : 8,
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "required" : [ "cscvincContainer" ]
+    }
+  }
+}

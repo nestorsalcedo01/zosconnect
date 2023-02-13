@@ -1,0 +1,30 @@
+{
+  "type" : "object",
+  "properties" : {
+    "cscvincSelectServiceOperation" : {
+      "type" : "object",
+      "properties" : {
+        "Container1" : {
+          "type" : "object",
+          "properties" : {
+            "request" : {
+              "type" : "object",
+              "properties" : {
+                "filea" : {
+                  "type" : "object",
+                  "properties" : {
+                    "employeeNumber" : {
+                      "maxLength" : 6,
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required" : [ "Container1" ]
+    }
+  }
+}

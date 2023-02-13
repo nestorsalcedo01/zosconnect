@@ -1,0 +1,30 @@
+{
+  "type" : "object",
+  "properties" : {
+    "cscvincDeleteRequestOperation" : {
+      "type" : "object",
+      "properties" : {
+        "Container1" : {
+          "type" : "object",
+          "properties" : {
+            "REQUEST_CONTAINER" : {
+              "type" : "object",
+              "properties" : {
+                "filea" : {
+                  "type" : "object",
+                  "properties" : {
+                    "employeeNumber" : {
+                      "maxLength" : 6,
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required" : [ "Container1" ]
+    }
+  }
+}

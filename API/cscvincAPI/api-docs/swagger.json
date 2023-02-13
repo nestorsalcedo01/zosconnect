@@ -1,0 +1,513 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0.0",
+    "title" : "cscvincapi"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/cscvinc",
+  "schemes" : [ "https", "http" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/employee" : {
+      "post" : {
+        "tags" : [ "cscvincapi" ],
+        "operationId" : "postCscvincInsertService",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "postCscvincInsertService_request",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/postCscvincInsertService_request"
+          }
+        } ],
+        "responses" : {
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/postCscvincInsertService_response_409"
+            }
+          },
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/postCscvincInsertService_response_200"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "cscvincapi" ],
+        "operationId" : "putCscvincUpdateService",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "putCscvincUpdateService_request",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/putCscvincUpdateService_request"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/putCscvincUpdateService_response_400"
+            }
+          },
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/putCscvincUpdateService_response_200"
+            }
+          }
+        }
+      }
+    },
+    "/employee/{numb}" : {
+      "get" : {
+        "tags" : [ "cscvincapi" ],
+        "operationId" : "getCscvincSelectService",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "numb",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "maxLength" : 6
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/getCscvincSelectService_response_404"
+            }
+          },
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/getCscvincSelectService_response_200"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "cscvincapi" ],
+        "operationId" : "deleteCscvincDeleteRequest",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "numb",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "maxLength" : 6
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/deleteCscvincDeleteRequest_response_404"
+            }
+          },
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/deleteCscvincDeleteRequest_response_200"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getCscvincSelectService_response_404" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincSelectServiceOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "useridentify" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "getCscvincSelectService_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincSelectServiceOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "useridentify" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    },
+                    "filea" : {
+                      "type" : "object",
+                      "properties" : {
+                        "employeeNumber" : {
+                          "type" : "string",
+                          "maxLength" : 6
+                        },
+                        "NAME" : {
+                          "type" : "string",
+                          "maxLength" : 20
+                        },
+                        "address" : {
+                          "type" : "string",
+                          "maxLength" : 20
+                        },
+                        "phoneNumber" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "date" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "amount" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "COMMENT" : {
+                          "type" : "string",
+                          "maxLength" : 9
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "deleteCscvincDeleteRequest_response_404" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincDeleteRequestOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "CEIBRESP" : {
+                      "type" : "integer",
+                      "minimum" : -99999999,
+                      "maximum" : 99999999
+                    },
+                    "CEIBRESP2" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 99999999
+                    },
+                    "USERID" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "deleteCscvincDeleteRequest_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincDeleteRequestOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "USERID" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "postCscvincInsertService_request" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincInsertServiceOperation" : {
+          "type" : "object",
+          "properties" : {
+            "Container1" : {
+              "type" : "object",
+              "properties" : {
+                "REQUEST_CONTAINER" : {
+                  "type" : "object",
+                  "properties" : {
+                    "filea" : {
+                      "type" : "object",
+                      "properties" : {
+                        "employeeNumber" : {
+                          "type" : "string",
+                          "maxLength" : 6
+                        },
+                        "name" : {
+                          "type" : "string",
+                          "maxLength" : 20
+                        },
+                        "address" : {
+                          "type" : "string",
+                          "maxLength" : 20
+                        },
+                        "phoneNumber" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "date" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "amount" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "Container1" ]
+        }
+      }
+    },
+    "postCscvincInsertService_response_409" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincInsertServiceOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "CEIBRESP" : {
+                      "type" : "integer",
+                      "minimum" : -99999999,
+                      "maximum" : 99999999
+                    },
+                    "CEIBRESP2" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 99999999
+                    },
+                    "USERID" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "postCscvincInsertService_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincInsertServiceOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "USERID" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "putCscvincUpdateService_request" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincUpdateServiceOperation" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "request" : {
+                  "type" : "object",
+                  "properties" : {
+                    "ACTION" : {
+                      "type" : "string",
+                      "maxLength" : 1,
+                      "default" : "U"
+                    },
+                    "filea" : {
+                      "type" : "object",
+                      "properties" : {
+                        "employeeNumber" : {
+                          "type" : "string",
+                          "maxLength" : 6
+                        },
+                        "name" : {
+                          "type" : "string",
+                          "maxLength" : 20
+                        },
+                        "address" : {
+                          "type" : "string",
+                          "maxLength" : 20
+                        },
+                        "phoneNumber" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "date" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        },
+                        "amount" : {
+                          "type" : "string",
+                          "maxLength" : 8
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "putCscvincUpdateService_response_400" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincUpdateServiceOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "CEIBRESP" : {
+                      "type" : "integer",
+                      "minimum" : -99999999,
+                      "maximum" : 99999999
+                    },
+                    "CEIBRESP2" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 99999999
+                    },
+                    "USERID" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    },
+    "putCscvincUpdateService_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "cscvincUpdateServiceOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "cscvincContainer" : {
+              "type" : "object",
+              "properties" : {
+                "response" : {
+                  "type" : "object",
+                  "properties" : {
+                    "USERID" : {
+                      "type" : "string",
+                      "maxLength" : 8
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "cscvincContainer" ]
+        }
+      }
+    }
+  }
+}

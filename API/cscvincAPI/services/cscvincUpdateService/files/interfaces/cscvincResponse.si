@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:message xmlns:ns2="http://www.ibm.com/ims/Transaction" transactionCode="" messageName="Channel" direction="0" serviceType="CICS_CHANNEL">
+    <message id="1" name="Channel">
+        <segment id="1" name="cscvincContainer" originalName="Container1" containerType="BIT" required="Y">
+            <field name="response" originalName="RESPONSE_CONTAINER" included="Y" path="response">
+                <startPos>1</startPos>
+                <bytes>97</bytes>
+                <maxBytes>97</maxBytes>
+                <remarks></remarks>
+                <marshaller alignment="NATURAL"/>
+                <applicationDatatype datatype="STRUCT"/>
+                <field name="ACTION" originalName="ACTION" included="N" path="response.ACTION">
+                    <startPos>1</startPos>
+                    <bytes>1</bytes>
+                    <maxBytes>1</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="CEIBRESP" originalName="CEIBRESP" included="Y" path="response.CEIBRESP">
+                    <startPos>2</startPos>
+                    <bytes>4</bytes>
+                    <maxBytes>4</maxBytes>
+                    <marshaller isNativeInteger="N" alignment="NATURAL"/>
+                    <applicationDatatype datatype="INT" precision="8"/>
+                </field>
+                <field name="CEIBRESP2" originalName="CEIBRESP2" included="Y" path="response.CEIBRESP2">
+                    <startPos>6</startPos>
+                    <bytes>4</bytes>
+                    <maxBytes>4</maxBytes>
+                    <marshaller isNativeInteger="N" alignment="NATURAL"/>
+                    <applicationDatatype datatype="UINT" precision="8"/>
+                </field>
+                <field name="USERID" originalName="USERID" included="Y" path="response.USERID">
+                    <startPos>10</startPos>
+                    <bytes>8</bytes>
+                    <maxBytes>8</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="FILEA_AREA" originalName="FILEA_AREA" included="N" path="response.FILEA_AREA">
+                    <startPos>18</startPos>
+                    <bytes>80</bytes>
+                    <maxBytes>80</maxBytes>
+                    <applicationDatatype datatype="STRUCT"/>
+                    <field name="STAT" originalName="STAT" included="N" path="response.FILEA_AREA.STAT">
+                        <startPos>18</startPos>
+                        <bytes>1</bytes>
+                        <maxBytes>1</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="NUMB" originalName="NUMB" included="N" path="response.FILEA_AREA.NUMB">
+                        <startPos>19</startPos>
+                        <bytes>6</bytes>
+                        <maxBytes>6</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="NAME" originalName="NAME" included="N" path="response.FILEA_AREA.NAME">
+                        <startPos>25</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="ADDRX" originalName="ADDRX" included="N" path="response.FILEA_AREA.ADDRX">
+                        <startPos>45</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="PHONE" originalName="PHONE" included="N" path="response.FILEA_AREA.PHONE">
+                        <startPos>65</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="DATEX" originalName="DATEX" included="N" path="response.FILEA_AREA.DATEX">
+                        <startPos>73</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="AMOUNT" originalName="AMOUNT" included="N" path="response.FILEA_AREA.AMOUNT">
+                        <startPos>81</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="COMMENT" originalName="COMMENT" included="N" path="response.FILEA_AREA.COMMENT">
+                        <startPos>89</startPos>
+                        <bytes>9</bytes>
+                        <maxBytes>9</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                </field>
+            </field>
+        </segment>
+    </message>
+</ns2:message>

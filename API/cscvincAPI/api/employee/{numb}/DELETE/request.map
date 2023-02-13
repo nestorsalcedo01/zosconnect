@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="zosconnect" jsonWrapped="false" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/DELETE" version="8.0.5.0" xmlns:map="http://www.ibm.com/zosConnect/2.0/mapping/DELETE">
+    <inlinedXMLSchema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE" xmlns:tns="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE"> 
+  <xsd:element name="cscvincDeleteRequestOperation" type="tns:cscvincDeleteRequestOperation"/> 
+  <xsd:complexType name="cscvincDeleteRequestOperation"> 
+    <xsd:sequence> 
+      <xsd:element name="Container1" type="tns:Container1"/> 
+    </xsd:sequence> 
+  </xsd:complexType> 
+  <xsd:complexType name="Container1"> 
+    <xsd:sequence> 
+      <xsd:element minOccurs="0" name="REQUEST_CONTAINER" type="tns:REQUEST_CONTAINER"/> 
+    </xsd:sequence> 
+  </xsd:complexType> 
+  <xsd:complexType name="REQUEST_CONTAINER"> 
+    <xsd:sequence> 
+      <xsd:element minOccurs="0" name="filea" type="tns:filea"/> 
+    </xsd:sequence> 
+  </xsd:complexType> 
+  <xsd:complexType name="filea"> 
+    <xsd:sequence> 
+      <xsd:element minOccurs="0" name="employeeNumber"> 
+        <xsd:simpleType> 
+          <xsd:restriction base="xsd:string"> 
+            <xsd:maxLength value="6"/> 
+          </xsd:restriction> 
+        </xsd:simpleType> 
+      </xsd:element> 
+    </xsd:sequence> 
+  </xsd:complexType> 
+</xsd:schema>]]></inlinedXMLSchema>
+    <inlinedXMLSchema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/DELETE"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/DELETE" xmlns:body="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE" xmlns:tns="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/DELETE"> 
+ 
+      <xsd:import namespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE" schemaLocation="../schema_0.xsd"/> 
+ 
+      <xsd:element name="HTTPRequest" type="tns:HTTPRequestType"/> 
+ 
+      <xsd:complexType name="HTTPRequestType"> 
+        <xsd:sequence> 
+          <xsd:element name="Headers" type="tns:HeadersType"/> 
+          <xsd:element name="PathParameters" type="tns:PathParametersType"/> 
+          <xsd:element name="QueryParameters" type="tns:QueryParametersType"/> 
+          <xsd:element name="Body" type="tns:BodyType"/> 
+        </xsd:sequence> 
+      </xsd:complexType> 
+ 
+      <xsd:complexType name="HeadersType"> 
+        <xsd:sequence> 
+        	<xsd:element maxOccurs="1" minOccurs="1" name="Authorization" type="xsd:string">
+        <xsd:annotation/>
+      </xsd:element> 
+        </xsd:sequence> 
+      </xsd:complexType> 
+ 
+      <xsd:complexType name="PathParametersType"> 
+        <xsd:sequence> 
+            <xsd:element maxOccurs="1" minOccurs="1" name="numb" type="xsd:string"/> 
+        </xsd:sequence> 
+      </xsd:complexType> 
+ 
+      <xsd:complexType name="QueryParametersType"> 
+        <xsd:sequence> 
+        </xsd:sequence> 
+      </xsd:complexType> 
+ 
+      <xsd:complexType name="BodyType"> 
+        <xsd:sequence> 
+          <xsd:element ref="body:cscvincDeleteRequestOperation"/> 
+        </xsd:sequence> 
+      </xsd:complexType> 
+    </xsd:schema>]]></inlinedXMLSchema>
+    <input inlinedXMLSchema="true" path="../schema_1.xsd" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/DELETE" var="rootInput"/>
+    <output inlinedXMLSchema="true" path="../schema_0.xsd" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE" var="rootOutput"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/DELETE"/>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE"/>
+    </namespaces>
+    <mappingDeclaration name="DELETE.employee.{numb}">
+        <input namespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/input/DELETE" path="$rootInput/HTTPRequest"/>
+        <output namespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/output/DELETE" path="$rootOutput/cscvincDeleteRequestOperation"/>
+        <passthrough>
+            <input path="Body/cscvincDeleteRequestOperation"/>
+            <output path="."/>
+            <updates>
+                <move>
+                    <input httpIn="path" path="PathParameters/numb" shape="1" xsdBuiltInOrDerivedSimpleType="http://www.w3.org/2001/XMLSchema:string"/>
+                    <output httpIn="body" path="Container1/REQUEST_CONTAINER/filea/employeeNumber" shape="1,2,3,4,5" xsdBuiltInOrDerivedSimpleType="http://www.w3.org/2001/XMLSchema:string"/>
+                </move>
+            </updates>
+        </passthrough>
+    </mappingDeclaration>
+</mappingRoot>

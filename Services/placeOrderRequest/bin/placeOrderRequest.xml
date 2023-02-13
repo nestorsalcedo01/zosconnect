@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns:ns2="http://www.ibm.com/ims/Transaction">
+    <shallow>true</shallow>
+    <serviceName>placeOrderRequest</serviceName>
+    <serviceType>ims-rest</serviceType>
+    <resourceType>TRAN</resourceType>
+    <status>1</status>
+    <conversionType>3</conversionType>
+    <dataProtocol>0</dataProtocol>
+    <serviceInputInterface>
+        <metadataName>orderRequest.si</metadataName>
+        <serviceInterface>
+            <interface>
+                <segment segmentName="COMMAREA">
+                    <interfaceField included="Y" fieldName="DFH0XCP1">
+                        <field included="N" fieldName="CA_REQUEST_ID" defaultValue="01ORDR" isHex="false"/>
+                        <field included="N" fieldName="CA_RETURN_CODE"/>
+                        <field included="N" fieldName="CA_RESPONSE_MESSAGE"/>
+                        <field included="N" fieldName="CA_REQUEST_SPECIFIC"/>
+                        <field included="N" fieldName="CA_INQUIRE_REQUEST">
+                            <field included="N" fieldName="CA_LIST_START_REF"/>
+                            <field included="N" fieldName="CA_LAST_ITEM_REF"/>
+                            <field included="N" fieldName="CA_ITEM_COUNT"/>
+                            <field included="N" fieldName="CA_INQUIRY_RESPONSE_DATA"/>
+                            <field included="N" fieldName="CA_CAT_ITEM">
+<field included="N" fieldName="CA_ITEM_REF"/>
+<field included="N" fieldName="CA_DESCRIPTION"/>
+<field included="N" fieldName="CA_DEPARTMENT"/>
+<field included="N" fieldName="CA_COST"/>
+<field included="N" fieldName="IN_STOCK"/>
+<field included="N" fieldName="ON_ORDER"/>
+                            </field>
+                        </field>
+                        <field included="N" fieldName="CA_INQUIRE_SINGLE">
+                            <field included="N" fieldName="CA_ITEM_REF_REQ"/>
+                            <field included="N" fieldName="FILL_0"/>
+                            <field included="N" fieldName="FILL_1"/>
+                            <field included="N" fieldName="CA_SINGLE_ITEM">
+<field included="N" fieldName="CA_SNGL_ITEM_REF"/>
+<field included="N" fieldName="CA_SNGL_DESCRIPTION"/>
+<field included="N" fieldName="CA_SNGL_DEPARTMENT"/>
+<field included="N" fieldName="CA_SNGL_COST"/>
+<field included="N" fieldName="IN_SNGL_STOCK"/>
+<field included="N" fieldName="ON_SNGL_ORDER"/>
+                            </field>
+                            <field included="N" fieldName="FILL_2"/>
+                        </field>
+                        <field included="Y" fieldName="CA_ORDER_REQUEST">
+                            <field included="N" fieldName="CA_USERID" defaultValue="abcdefgh" isHex="false"/>
+                            <field included="N" fieldName="CA_CHARGE_DEPT" defaultValue="1234" isHex="false"/>
+                            <field included="Y" fieldName="itemID" isHex="false"/>
+                            <field included="Y" fieldName="orderQuantity" isHex="false"/>
+                            <field included="N" fieldName="FILL_3"/>
+                        </field>
+                    </interfaceField>
+                </segment>
+            </interface>
+        </serviceInterface>
+        <version>0</version>
+    </serviceInputInterface>
+    <serviceOutputInterface>
+        <metadataName>placeOrderResponse.si</metadataName>
+        <serviceInterface>
+            <interface>
+                <segment segmentName="COMMAREA">
+                    <interfaceField included="Y" fieldName="DFH0XCP1">
+                        <field included="N" fieldName="CA_REQUEST_ID"/>
+                        <field included="Y" fieldName="CA_RETURN_CODE"/>
+                        <field included="Y" fieldName="CA_RESPONSE_MESSAGE"/>
+                        <field included="N" fieldName="CA_REQUEST_SPECIFIC"/>
+                        <field included="N" fieldName="CA_INQUIRE_REQUEST">
+                            <field included="N" fieldName="CA_LIST_START_REF"/>
+                            <field included="N" fieldName="CA_LAST_ITEM_REF"/>
+                            <field included="N" fieldName="CA_ITEM_COUNT"/>
+                            <field included="N" fieldName="CA_INQUIRY_RESPONSE_DATA"/>
+                            <field included="N" fieldName="CA_CAT_ITEM">
+<field included="N" fieldName="CA_ITEM_REF"/>
+<field included="N" fieldName="CA_DESCRIPTION"/>
+<field included="N" fieldName="CA_DEPARTMENT"/>
+<field included="N" fieldName="CA_COST"/>
+<field included="N" fieldName="IN_STOCK"/>
+<field included="N" fieldName="ON_ORDER"/>
+                            </field>
+                        </field>
+                        <field included="N" fieldName="CA_INQUIRE_SINGLE">
+                            <field included="N" fieldName="CA_ITEM_REF_REQ"/>
+                            <field included="N" fieldName="FILL_0"/>
+                            <field included="N" fieldName="FILL_1"/>
+                            <field included="N" fieldName="CA_SINGLE_ITEM">
+<field included="N" fieldName="CA_SNGL_ITEM_REF"/>
+<field included="N" fieldName="CA_SNGL_DESCRIPTION"/>
+<field included="N" fieldName="CA_SNGL_DEPARTMENT"/>
+<field included="N" fieldName="CA_SNGL_COST"/>
+<field included="N" fieldName="IN_SNGL_STOCK"/>
+<field included="N" fieldName="ON_SNGL_ORDER"/>
+                            </field>
+                            <field included="N" fieldName="FILL_2"/>
+                        </field>
+                        <field included="N" fieldName="CA_ORDER_REQUEST">
+                            <field included="N" fieldName="CA_USERID"/>
+                            <field included="N" fieldName="CA_CHARGE_DEPT"/>
+                            <field included="N" fieldName="CA_ITEM_REF_NUMBER"/>
+                            <field included="N" fieldName="CA_QUANTITY_REQ"/>
+                            <field included="N" fieldName="FILL_3"/>
+                        </field>
+                    </interfaceField>
+                </segment>
+            </interface>
+        </serviceInterface>
+        <version>0</version>
+    </serviceOutputInterface>
+    <applicationDataStructureType>Block</applicationDataStructureType>
+    <messageVisitorRuntimeType>CICS_COMMAREA</messageVisitorRuntimeType>
+    <ccsid>IBM037</ccsid>
+    <totalExecCount>0</totalExecCount>
+    <failedCount>0</failedCount>
+    <trancodeOverride>INQCALT</trancodeOverride>
+    <trimOutputLeadingWhitespace>false</trimOutputLeadingWhitespace>
+    <trimOutputTrailingWhitespace>true</trimOutputTrailingWhitespace>
+    <escapeOutputControlCharacters>false</escapeOutputControlCharacters>
+    <initializeInputFields>false</initializeInputFields>
+    <omitOutputFieldsByValue>false</omitOutputFieldsByValue>
+    <omitOutputFieldsByValueByte>0x00</omitOutputFieldsByValueByte>
+    <omitOutputEmptyTags>false</omitOutputEmptyTags>
+    <enforceMinArrayOccurrence>false</enforceMinArrayOccurrence>
+    <enforceMinArrayOccurrenceResponse>false</enforceMinArrayOccurrenceResponse>
+    <ldsStartsWithLLZZTRANCODE>false</ldsStartsWithLLZZTRANCODE>
+    <ldsStartsWithLLZZ>false</ldsStartsWithLLZZ>
+    <truncateInputLastCharField>false</truncateInputLastCharField>
+</service>

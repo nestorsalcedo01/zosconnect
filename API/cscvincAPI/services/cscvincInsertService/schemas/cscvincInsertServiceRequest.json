@@ -1,0 +1,50 @@
+{
+  "type" : "object",
+  "properties" : {
+    "cscvincInsertServiceOperation" : {
+      "type" : "object",
+      "properties" : {
+        "Container1" : {
+          "type" : "object",
+          "properties" : {
+            "REQUEST_CONTAINER" : {
+              "type" : "object",
+              "properties" : {
+                "filea" : {
+                  "type" : "object",
+                  "properties" : {
+                    "employeeNumber" : {
+                      "maxLength" : 6,
+                      "type" : "string"
+                    },
+                    "name" : {
+                      "maxLength" : 20,
+                      "type" : "string"
+                    },
+                    "address" : {
+                      "maxLength" : 20,
+                      "type" : "string"
+                    },
+                    "phoneNumber" : {
+                      "maxLength" : 8,
+                      "type" : "string"
+                    },
+                    "date" : {
+                      "maxLength" : 8,
+                      "type" : "string"
+                    },
+                    "amount" : {
+                      "maxLength" : 8,
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required" : [ "Container1" ]
+    }
+  }
+}

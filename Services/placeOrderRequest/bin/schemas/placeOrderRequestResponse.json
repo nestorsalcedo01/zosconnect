@@ -1,0 +1,19 @@
+{
+  "type" : "object",
+  "properties" : {
+    "DFH0XCP1" : {
+      "type" : "object",
+      "properties" : {
+        "CA_RETURN_CODE" : {
+          "minimum" : 0,
+          "maximum" : 99,
+          "type" : "integer"
+        },
+        "CA_RESPONSE_MESSAGE" : {
+          "maxLength" : 79,
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:message xmlns:ns2="http://www.ibm.com/ims/Transaction" transactionCode="" messageName="Channel" direction="0" serviceType="CICS_CHANNEL">
+    <message id="1" name="Channel">
+        <segment id="1" name="" originalName="Container1" containerType="BIT" required="Y">
+            <field name="REQUEST_CONTAINER" originalName="REQUEST_CONTAINER" included="Y" path="REQUEST_CONTAINER">
+                <startPos>1</startPos>
+                <bytes>89</bytes>
+                <maxBytes>89</maxBytes>
+                <applicationDatatype datatype="STRUCT"/>
+                <field name="ACTION" originalName="ACTION" included="N" defaultValue="I" isHex="false" path="REQUEST_CONTAINER.ACTION" codepageConversion="Y">
+                    <startPos>1</startPos>
+                    <bytes>1</bytes>
+                    <maxBytes>1</maxBytes>
+                    <remarks></remarks>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="USERID" originalName="USERID" included="N" path="REQUEST_CONTAINER.USERID">
+                    <startPos>2</startPos>
+                    <bytes>8</bytes>
+                    <maxBytes>8</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="filea" originalName="FILEA_AREA" included="Y" path="REQUEST_CONTAINER.filea">
+                    <startPos>10</startPos>
+                    <bytes>80</bytes>
+                    <maxBytes>80</maxBytes>
+                    <remarks></remarks>
+                    <applicationDatatype datatype="STRUCT"/>
+                    <field name="STAT" originalName="STAT" included="N" path="REQUEST_CONTAINER.filea.STAT">
+                        <startPos>10</startPos>
+                        <bytes>1</bytes>
+                        <maxBytes>1</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="employeeNumber" originalName="NUMB" included="Y" defaultValue="" isHex="false" path="REQUEST_CONTAINER.filea.employeeNumber" codepageConversion="Y">
+                        <startPos>11</startPos>
+                        <bytes>6</bytes>
+                        <maxBytes>6</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="name" originalName="NAME" included="Y" defaultValue="" isHex="false" path="REQUEST_CONTAINER.filea.name" codepageConversion="Y">
+                        <startPos>17</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="address" originalName="ADDRX" included="Y" defaultValue="" isHex="false" path="REQUEST_CONTAINER.filea.address" codepageConversion="Y">
+                        <startPos>37</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="phoneNumber" originalName="PHONE" included="Y" defaultValue="" isHex="false" path="REQUEST_CONTAINER.filea.phoneNumber" codepageConversion="Y">
+                        <startPos>57</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="date" originalName="DATEX" included="Y" defaultValue="" isHex="false" path="REQUEST_CONTAINER.filea.date" codepageConversion="Y">
+                        <startPos>65</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="amount" originalName="AMOUNT" included="Y" defaultValue="" isHex="false" path="REQUEST_CONTAINER.filea.amount" codepageConversion="Y">
+                        <startPos>73</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="COMMENT" originalName="COMMENT" included="N" path="REQUEST_CONTAINER.filea.COMMENT">
+                        <startPos>81</startPos>
+                        <bytes>9</bytes>
+                        <maxBytes>9</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                </field>
+            </field>
+        </segment>
+    </message>
+</ns2:message>

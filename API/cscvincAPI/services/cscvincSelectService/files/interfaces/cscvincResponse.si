@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:message xmlns:ns2="http://www.ibm.com/ims/Transaction" transactionCode="" messageName="Channel" direction="0" serviceType="CICS_CHANNEL">
+    <message id="1" name="Channel">
+        <segment id="1" name="cscvincContainer" originalName="Container1" containerType="BIT" required="Y">
+            <field name="response" originalName="RESPONSE_CONTAINER" included="Y" path="response">
+                <startPos>1</startPos>
+                <bytes>97</bytes>
+                <maxBytes>97</maxBytes>
+                <remarks></remarks>
+                <marshaller alignment="NATURAL"/>
+                <applicationDatatype datatype="STRUCT"/>
+                <field name="ACTION" originalName="ACTION" included="N" path="response.ACTION">
+                    <startPos>1</startPos>
+                    <bytes>1</bytes>
+                    <maxBytes>1</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="CEIBRESP" originalName="CEIBRESP" included="Y" path="response.CEIBRESP">
+                    <startPos>2</startPos>
+                    <bytes>4</bytes>
+                    <maxBytes>4</maxBytes>
+                    <marshaller isNativeInteger="N" alignment="NATURAL"/>
+                    <applicationDatatype datatype="INT" precision="8"/>
+                </field>
+                <field name="CEIBRESP2" originalName="CEIBRESP2" included="Y" path="response.CEIBRESP2">
+                    <startPos>6</startPos>
+                    <bytes>4</bytes>
+                    <maxBytes>4</maxBytes>
+                    <marshaller isNativeInteger="N" alignment="NATURAL"/>
+                    <applicationDatatype datatype="UINT" precision="8"/>
+                </field>
+                <field name="useridentify" originalName="USERID" included="Y" defaultValue="" isHex="false" path="response.useridentify" codepageConversion="Y">
+                    <startPos>10</startPos>
+                    <bytes>8</bytes>
+                    <maxBytes>8</maxBytes>
+                    <remarks></remarks>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="filea" originalName="FILEA_AREA" included="Y" path="response.filea">
+                    <startPos>18</startPos>
+                    <bytes>80</bytes>
+                    <maxBytes>80</maxBytes>
+                    <remarks></remarks>
+                    <applicationDatatype datatype="STRUCT"/>
+                    <field name="STAT" originalName="STAT" included="N" path="response.filea.STAT">
+                        <startPos>18</startPos>
+                        <bytes>1</bytes>
+                        <maxBytes>1</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="employeeNumber" originalName="NUMB" included="Y" defaultValue="" isHex="false" path="response.filea.employeeNumber" codepageConversion="Y">
+                        <startPos>19</startPos>
+                        <bytes>6</bytes>
+                        <maxBytes>6</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="NAME" originalName="NAME" included="Y" path="response.filea.NAME">
+                        <startPos>25</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="address" originalName="ADDRX" included="Y" defaultValue="" isHex="false" path="response.filea.address" codepageConversion="Y">
+                        <startPos>45</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="phoneNumber" originalName="PHONE" included="Y" defaultValue="" isHex="false" path="response.filea.phoneNumber" codepageConversion="Y">
+                        <startPos>65</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="date" originalName="DATEX" included="Y" defaultValue="" isHex="false" path="response.filea.date" codepageConversion="Y">
+                        <startPos>73</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="amount" originalName="AMOUNT" included="Y" defaultValue="" isHex="false" path="response.filea.amount" codepageConversion="Y">
+                        <startPos>81</startPos>
+                        <bytes>8</bytes>
+                        <maxBytes>8</maxBytes>
+                        <remarks></remarks>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="COMMENT" originalName="COMMENT" included="Y" path="response.filea.COMMENT">
+                        <startPos>89</startPos>
+                        <bytes>9</bytes>
+                        <maxBytes>9</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                </field>
+            </field>
+        </segment>
+    </message>
+</ns2:message>
