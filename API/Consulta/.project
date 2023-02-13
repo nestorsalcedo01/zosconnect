@@ -12,6 +12,8 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.ibm.ftt.ui.views.project.navigator.local</nature>
+		<nature>com.ibm.ftt.dbbz.integration.dbbzprojectnature</nature>
 		<nature>com.ibm.zosconnect.ui.projects.ZosConnectApiProjectNature</nature>
 	</natures>
 </projectDescription>
