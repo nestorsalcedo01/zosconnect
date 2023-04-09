@@ -4,5 +4,7 @@
     <requestMessage>
         <mappingRootModel type="MSL" location="api/item/{itemID}/GET/request.map"/>
     </requestMessage>
-    <responseMessages code="200" description="OK"/>
+    <responseMessages code="200" description="OK">
+        <mappingRootModel type="MSL" location="api/item/{itemID}/GET/response.map"/>
+    </responseMessages>
 </ns2:ZosConnectServiceMapping>
